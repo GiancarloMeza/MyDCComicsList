@@ -1,1 +1,1 @@
-# devApp
+# MyDCComicsList
