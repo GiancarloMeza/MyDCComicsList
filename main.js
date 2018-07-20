@@ -3,22 +3,24 @@ var airtable_list_url = 'https://api.airtable.com/v0/apphqaKHaWm6NvtYO/Table%201
 
 var cardTemplate = function(name, rating, pictures){
     return `
-        <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="${pictures}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-title">${name}</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Get More Info</button>
+          <div class="container">    
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="${pictures}" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-title">${name}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Get More Info</button>
+                                    </div>
+                                    <p class="card-text">${rating}</p>
+                                </div>
                             </div>
-                            <p class="card-text">${rating}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>`;
+            </div>`;
 }
 
 //This is where we get the JSON data from 
