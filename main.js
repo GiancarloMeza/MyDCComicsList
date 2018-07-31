@@ -13,7 +13,7 @@ var listView = function(id, name, rating, pictures){
     return `
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"> 
         <div class="card mb-4 box-shadow">
-        <a href="?id=${id}"><img class="card-img-top" src="${pictures}" alt="Card image cap"></a>
+        <a href="?id=${id}"><img height="550" class="card-img-top" src="${pictures}" alt="Card image cap"></a>
             <div class="card-body">
                 <p class="card-title">${name}</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -44,7 +44,7 @@ var getDataForList = function(){
     });
 }
 
-var detailView = function(id, name, pictures, rating, cost, dccomics, buyit, about, realesdate, enddate, art, wriitenby){
+var detailView = function(id, name, pictures, rating, cost, dccomics, buyit, about, realesdate, enddate, art, writtenby){
     return `
     <div class="col-sm-12">
     <div class="card mb-4 box-shadow">
@@ -57,7 +57,7 @@ var detailView = function(id, name, pictures, rating, cost, dccomics, buyit, abo
           <small class="text-muted">${rating}</small>
           <small class="text-muted">${cost}</small>
           <small class="text-muted">${about}</small>
-          <small class="text-muted">${wriitenby}</small>
+          <small class="text-muted">${writtenby}</small>
           <small class="text-muted">${art}</small>
           <small class="text-muted">${realesdate}</small>
           <small class="text-muted">${enddate}</small>
@@ -104,4 +104,3 @@ if (id) {
 } else {
     getDataForList();
 }
-// just for error
