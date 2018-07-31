@@ -46,34 +46,25 @@ var getDataForList = function(){
 
 var detailView = function(id, name, pictures, rating, cost, dccomics, buyit, about, realesdate, enddate, art, writtenby){
     return `
-    <div class="col-sm-12">
-    <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="${pictures}">
-      <div class="card-body">
-        <h2>${name}</h2>
-        <p class="card-text">${rating}</p>
-        <p class="card-text">${cost}</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <small class="text-muted">${rating}</small>
-          <small class="text-muted">${cost}</small>
-          <small class="text-muted">${about}</small>
-          <small class="text-muted">${writtenby}</small>
-          <small class="text-muted">${art}</small>
-          <small class="text-muted">${realesdate}</small>
-          <small class="text-muted">${enddate}</small>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"> 
+        <div class="card mb-4 box-shadow">
+        <a href="?id=${id}"><img height="550" class="card-img-top" src="${pictures}" alt="Card image cap"></a>
+            <div class="card-body">
+                <p class="card-title">${name}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <a href="?id=${id}"><button type="button" class="btn btn-sm btn-outline-secondary">Get More Info</button></a>
+                    </div>
+                    <p class="card-text">${rating}</p>
+                </div>
+            </div>
         </div>
-        ${dccomics ? `<a href="${dccomics}">${dccomics}</a>`: ``}
-        <hr/>
-        </div>
-        ${buyit ? `<a href="${buyit}">${buyit}</a>`: ``}
-        <hr/>
-      </div>
-    </div>
-  </div>`
+    </div>`
 }
 
 var getDataForId = function(id) {
-    $.getJSON( `https://api.airtable.com/v0/apphqaKHaWm6NvtYO/Table%201${id}?api_key=keySx6GmwxJ6iqhTD`, function( record ) {
+                
+    $.getJSON( `https://api.airtable.com/v0/apphqaKHaWm6NvtYO/Table%201/${id}?api_key=keySx6GmwxJ6iqhTD`, function( record ) {
       var html = [];
       html.push('<div class="row">');
         var id = record.id;
@@ -89,7 +80,7 @@ var getDataForId = function(id) {
         var realesdate = fields["RealesDate"];
         var enddate = fields["EndDate"];
         var art = fields["Art"];
-        var writtenBy = fields["WrittenBy"];
+        var writtenby = fields["WrittenBy"];
   
         var itemHTML = detailView(id, name, pictures, rating, cost,  dccomics, buyit, about, realesdate, enddate, art, writtenby);
         html.push(itemHTML);
@@ -104,3 +95,23 @@ if (id) {
 } else {
     getDataForList();
 }
+
+// function myFunction() {
+//     var input, filter, myTable, myContainer, myListView;
+//     input = document.getElementById("myInput");
+//     filter = input.value.toUpperCase();
+//     table = document.getElementById("myTable");
+//     container = myTable.getElementById("myContainer");
+//     listView = myContainer.getElementById("myListView");
+  
+//     for (i = 0; i < tr.length; i++) {
+//       listView = listView[i].getElementsById("myListView")[0];
+//       if (listView) {
+//         if (listView.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//           listView[i].style.display = "";
+//         } else {
+//           listView[i].style.display = "none";
+//         }
+//       } 
+//     }
+// }
