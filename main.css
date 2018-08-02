@@ -41,3 +41,82 @@
   }
   
   .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+#wrapper {
+  overflow: hidden;
+}
+#about {
+    float:left;
+    margin-right: 400px;
+}
+#card {
+    float: right;
+}
+
+#name {
+  text-align: center;
+  font-size: 16px;
+}
+
+
+#rating {
+margin-left: 50px;
+}
+
+#runDate{
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: left;
+}
+
+#date {
+  font-size: 13px;
+  text-align: right;
+}
+
+
+#price {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: left;
+  }
+
+#priceInfo {
+  font-size: 13px;
+  text-align: right;
+    }
+
+#writtenBy {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: left;
+}
+    
+#writtenVar {
+  font-size: 13px;
+  text-align: right;
+}
+
+#artBy {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: left;
+  }
+
+#artVar {
+  font-size: 13px;
+  text-align: right;
+}
+#owner {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: left;
+  }
+
+#dcComics {
+  font-size: 13px;
+  text-align: right;
+}
+
+
+
