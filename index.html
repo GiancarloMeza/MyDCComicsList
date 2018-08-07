@@ -6,18 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="https://www.flaticon.com/free-icon/dr-fate_87829">
-
     <title>TDCStories</title>
-
-    <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="main.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="main.js"></script>
   </head>
-
   <body>
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
@@ -40,7 +34,7 @@
       </div>
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">            
-          <a href="https://giancarlomeza.github.io/MyDCComicsList/" class="navbar-brand d-flex align-items-center">
+          <a href="index.html" class="navbar-brand d-flex align-items-center">
             <strong>TDCStories</strong>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,9 +48,8 @@
         <div class="container">
           <h1 class="jumbotron-heading">Top DC Comic Stories</h1>
           <p class="lead text-muted">This is an app that shows the most poplular DC Comic Stories. If there are any Comic book stories that you feel I missed. Feel free to recommend your favorites at the bottom of the page!</p>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <form name="searchBar" class="form-inline">
+            <input id="myinput" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" autocomplete="off" onkeyup="searchFunction()">
           </form>
         </div>
       </section>
@@ -76,10 +69,6 @@
         <p><a href="https://airtable.com/shrM9yjdu38advwUS" class="btn btn-primary my-2">Submit Your Favorite Story Here!</a></p>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="  https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="  https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
