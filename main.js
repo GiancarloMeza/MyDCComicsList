@@ -136,11 +136,9 @@ var getDataForId = function(id) {
 
 
 function searchFunction() {
-    var input, filter, cardimgtext, titlename, strong, i, x;
+    var input, filter, cardimgtext, i, x;
     input = document.getElementById('myinput');
     filter = input.value.toUpperCase();
-    titlename = document.getElementById('titleName');
-    strong = titlename.getElementsByTagName('strong');
 
     cardimgtext = document.getElementsByClassName('cardImgText');
     
