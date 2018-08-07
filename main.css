@@ -33,7 +33,7 @@
   }
 
   input {
-    margin-left: 160px;
+    margin-left: 215px;
   }
   
   footer p {
@@ -42,81 +42,85 @@
   
   .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
-#wrapper {
+.container {
   overflow: hidden;
 }
-#about {
-    float:left;
-    margin-right: 400px;
-}
-#card {
-    float: right;
+
+.about {
+  text-indent: 50px;
 }
 
-#name {
+.card-title{
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.name {
   text-align: center;
   font-size: 16px;
 }
 
 
-#rating {
+.rating {
 margin-left: 50px;
 }
 
-#runDate{
-  margin-top: 15px;
+.runDate{
+  margin-top: 16px;
   font-size: 13px;
   text-align: left;
 }
 
-#date {
+.date {
   font-size: 13px;
   text-align: right;
 }
 
 
-#price {
-  margin-top: 15px;
+.price {
+  margin-top: 16px;
   font-size: 13px;
   text-align: left;
   }
 
-#priceInfo {
+.priceInfo {
   font-size: 13px;
   text-align: right;
     }
 
-#writtenBy {
-  margin-top: 15px;
+.writtenBy {
+  margin-top: 16px;
   font-size: 13px;
   text-align: left;
 }
     
-#writtenVar {
+.writtenVar {
   font-size: 13px;
   text-align: right;
 }
 
-#artBy {
-  margin-top: 15px;
+.artBy {
+  margin-top: 16px;
   font-size: 13px;
   text-align: left;
   }
 
-#artVar {
+.artVar {
   font-size: 13px;
   text-align: right;
 }
-#owner {
-  margin-top: 15px;
+.owner {
+  margin-top: 16px;
   font-size: 13px;
   text-align: left;
   }
 
-#dcComics {
+.dcComics {
   font-size: 13px;
   text-align: right;
 }
+
+
 
 
 
