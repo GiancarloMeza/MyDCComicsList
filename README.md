@@ -1,1 +1,1 @@
-# MyDCComicsList
+# TopDCComics
