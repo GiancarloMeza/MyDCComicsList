@@ -11,11 +11,11 @@ var api_key = 'keySx6GmwxJ6iqhTD';
 
 var listView = function(id, name, rating, pictures){
     return `
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"> 
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 cardImgText"> 
         <div class="card mb-4 box-shadow">
         <a href="?id=${id}"><img height="550" class="card-img-top" src="${pictures}" alt="Card image cap"></a>
             <div class="card-body">
-                <p id="name" class="card-title"><strong><i>${name}</i></strong></p>
+                <p id="titleName" class="name card-title"><strong><i>${name}</i></strong></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     <a href="?id=${id}"><button type="button" class="btn btn-sm btn-outline-secondary">Get More Info</button></a>
@@ -46,57 +46,57 @@ var getDataForList = function(){
 
 var detailView = function(id, name, pictures, rating, cost, dccomics, buyit, about, releasedate, enddate, art, writtenby){
     return `
-    <div id="wrapper">
-        <div id="about">
-            <h1 id="aboutHeader">About</h1>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+            <h1 class="aboutHeader">About</h1>
             <hr>
-            <p>${about}</p>
+            <p class="about">${about}</p>
         </div>
-    
-        <div id="card" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <div class="card mb-4 box-shadow">
+        <div class="card mb-4 box-shadow card col-md-4 offset-md-2">
+            <div>
+                <p class="card-title name"><strong><i>${name}</i></strong></p>
                 <img height="550" class="card-img-top" src="${pictures}" alt="Card image cap">
                 <div class="card-body">
-                    <p id="name" class="card-title"><strong><i>${name}</i></strong</p>
-                    <hr>
-                    <p id="rating" class="card-text">${rating}</p>
+                    <p class="card-text rating">${rating}</p>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="card-text">
-                            <p id="runDate">Run Date:<p>
+                            <p class="runDate">Run Date:<p>
                         </div>
-                        <p id="date" class="card-text">${releasedate} - ${enddate}</p>        
+                        <p class="card-text date">${releasedate} - ${enddate}</p>        
                     </div>        
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="card-text">
-                            <p id="price">Price:<p>
+                            <p class="price">Price:<p>
                         </div>
-                        <a href="${buyit}"><p id="priceInfo" class="card-text">$${cost}</p></a>
+                        <a href="${buyit}"><p class="card-text priceInfo">$${cost}</p></a>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="card-text">
-                            <p id="writtenBy">Written By:<p>
+                            <p class="writtenBy">Written By:<p>
                         </div>
-                        <p id="writtenVar" class="card-text">${writtenby}</p>
+                        <p class="card-text writtenVar">${writtenby}</p>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="card-text">
-                            <p id="artBy">Art By:<p>
+                            <p class="artBy">Art By:<p>
                         </div>
-                        <p id="artVar" class="card-text">${art}</p>
+                        <p class="card-text artVar">${art}</p>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="card-text">
-                            <p id="owner">Owner:<p>
+                            <p class="owner">Owner:<p>
                         </div>
-                        <a href="${dccomics}"><p id="dcComics" class="card-text">DC Comics</p></a>
+                        <a href="${dccomics}"><p class="dcComics card-text">DC Comics</p></a>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>`
 }
@@ -109,7 +109,6 @@ var getDataForId = function(id) {
         var id = record.id;
         var fields = record.fields;
         var name = fields["Name"];
-  
         var pictures = fields["Pictures"] ? fields["Pictures"][0].url : '';
         var rating = fields["Rating"];
         var cost = fields["Cost"];
@@ -128,9 +127,31 @@ var getDataForId = function(id) {
     });
   }
   var id = getParameterByName("id");
+  
+  if (id) {
+      getDataForId(id);
+    } else {
+        getDataForList();
+    }
 
-if (id) {
-  getDataForId(id);
-} else {
-    getDataForList();
-}
+
+function searchFunction() {
+    var input, filter, cardimgtext, titlename, strong, i, x;
+    input = document.getElementById('myinput');
+    filter = input.value.toUpperCase();
+    titlename = document.getElementById('titleName');
+    strong = titlename.getElementsByTagName('strong');
+
+    cardimgtext = document.getElementsByClassName('cardImgText');
+    
+    for (x = 0; x < cardimgtext.length; x++) {
+        i = cardimgtext[x].getElementsByTagName('i')[0];
+        if(i.innerHTML.toUpperCase().indexOf(filter) > -1){
+            cardimgtext[x].style.display = '';
+        }else{
+            cardimgtext[x].style.display = 'none';
+        }
+    }
+ }
+
+
