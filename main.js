@@ -13,12 +13,12 @@ var listView = function(id, name, rating, pictures){
     return `
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 cardImgText"> 
         <div class="card mb-4 box-shadow">
-        <a href="?id=${id}"><img height="550" class="card-img-top" src="${pictures}" alt="Card image cap"></a>
+        <a href="detailView.html?id=${id}"><img height="550" class="card-img-top" src="${pictures}" alt="Card image cap"></a>
             <div class="card-body">
                 <p id="titleName" class="name card-title"><strong><i>${name}</i></strong></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <a href="?id=${id}"><button type="button" class="btn btn-sm btn-outline-secondary">Get More Info</button></a>
+                    <a href="detailView.html?id=${id}"><button type="button" class="btn btn-sm btn-outline-secondary">Get More Info</button></a>
                     </div>
                     <p class="card-text">${rating}</p>
                 </div>
@@ -115,6 +115,7 @@ var getDataForId = function(id) {
         var dccomics = fields["DCComics"];
         var buyit = fields["BuyIt"];
         var about = fields["About"];
+        about = about.replace(/(?:\r\n|\r|\n)/g, '<br>');
         var releasedate = fields["ReleaseDate"];
         var enddate = fields["EndDate"];
         var art = fields["Art"];
@@ -126,6 +127,7 @@ var getDataForId = function(id) {
       $(".detail-view").append(html.join(""));
     });
   }
+  
   var id = getParameterByName("id");
   
   if (id) {
