@@ -141,7 +141,6 @@ function searchFunction() {
     var input, filter, cardimgtext, i, x;
     input = document.getElementById('myinput');
     filter = input.value.toUpperCase();
-
     cardimgtext = document.getElementsByClassName('cardImgText');
     
     for (x = 0; x < cardimgtext.length; x++) {
