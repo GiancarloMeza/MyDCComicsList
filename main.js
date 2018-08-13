@@ -13,7 +13,7 @@ var listView = function(id, name, rating, pictures){
     return `
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 cardImgText"> 
         <div class="card mb-4 box-shadow">
-        <a href="detailView.html?id=${id}"><img height="550" class="card-img-top" src="${pictures}" alt="Card image cap"></a>
+        <a href="detailView.html?id=${id}"><img height="450" class="card-img-top" src="${pictures}" alt="Card image cap"></a>
             <div class="card-body">
                 <p id="titleName" class="name card-title"><strong><i>${name}</i></strong></p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -56,7 +56,7 @@ var detailView = function(id, name, pictures, rating, cost, dccomics, buyit, abo
         <div class="card mb-4 box-shadow card col-md-4 offset-md-2">
             <div>
                 <p class="card-title name"><strong><i>${name}</i></strong></p>
-                <img height="550" class="card-img-top" src="${pictures}" alt="Card image cap">
+                <img height="450" class="card-img-top" src="${pictures}" alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text rating">${rating}</p>
                     <hr>
